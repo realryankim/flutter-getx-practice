@@ -1,7 +1,5 @@
-// #2 || Flutter GetX Tutorial || Showing Snackbar using GetX Library
-// https://www.youtube.com/watch?v=ou4iTI3YP_A&list=PLCaS22Sjc8YR32XmudgmVqs49t-eKKr9t&index=3
-
 import 'package:flutter/material.dart';
+import 'package:flutter_getx/pages/dialog_page.dart';
 import 'package:flutter_getx/pages/snackbar_page.dart';
 import 'package:get/get.dart';
 
@@ -19,16 +17,23 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Snackbar'),
+          title: Text('Flutter GetX Practice'),
         ),
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
                 onPressed: () {
                   Get.to(SnackbarPage());
                 },
                 child: Text('Snackbar'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Get.to(DialogPage());
+                },
+                child: Text('Dialog'),
               ),
             ],
           ),
