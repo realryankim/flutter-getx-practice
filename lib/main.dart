@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx/pages/bottom_sheet_page.dart';
 import 'package:flutter_getx/pages/dialog_page.dart';
 import 'package:flutter_getx/pages/snackbar_page.dart';
 import 'package:get/get.dart';
@@ -34,6 +35,12 @@ class MyApp extends StatelessWidget {
                   Get.to(DialogPage());
                 },
                 child: Text('Dialog'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Get.to(BottomSheetPage());
+                },
+                child: Text('Bottom Sheet'),
               ),
             ],
           ),
