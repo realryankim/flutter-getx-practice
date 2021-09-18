@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx/pages/bottom_sheet_page.dart';
 import 'package:flutter_getx/pages/dialog_page.dart';
 import 'package:flutter_getx/pages/snackbar_page.dart';
+import 'package:flutter_getx/pages/un_named_route/un_named_route_page.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -41,6 +42,12 @@ class MyApp extends StatelessWidget {
                   Get.to(BottomSheetPage());
                 },
                 child: Text('Bottom Sheet'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Get.to(UnNamedRoutePage());
+                },
+                child: Text('Go to UnNamed Route'),
               ),
             ],
           ),
