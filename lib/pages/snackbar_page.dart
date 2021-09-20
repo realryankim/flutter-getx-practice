@@ -1,6 +1,3 @@
-// #2 || Flutter GetX Tutorial || Showing Snackbar using GetX Library
-// https://www.youtube.com/watch?v=ou4iTI3YP_A&list=PLCaS22Sjc8YR32XmudgmVqs49t-eKKr9t&index=3
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

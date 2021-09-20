@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx/pages/bottom_sheet_page.dart';
 import 'package:flutter_getx/pages/dialog_page.dart';
+import 'package:flutter_getx/pages/named_route/home_screen.dart';
+import 'package:flutter_getx/pages/named_route/named_route_page.dart';
+import 'package:flutter_getx/pages/named_route/next_screen.dart';
+import 'package:flutter_getx/pages/named_route/unknown_route.dart';
 import 'package:flutter_getx/pages/snackbar_page.dart';
 import 'package:flutter_getx/pages/un_named_route/un_named_route_page.dart';
 import 'package:get/get.dart';
@@ -13,7 +17,29 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Snackbar',
+      title: 'Flutter GetX Practice',
+      initialRoute: "/",
+      defaultTransition: Transition.zoom,
+      getPages: [
+        GetPage(name: '/', page: () => MyApp()),
+        GetPage(name: '/home', page: () => HomeScreen()),
+        // GetPage(
+        //   name: '/nextScreen',
+        //   // To Control the transition route wise
+        //   // If specified will override the default transition
+        //   page: () => NextScreen(),
+        //   transition: Transition.leftToRight,
+        // ), // GetPage
+
+        GetPage(
+          name: '/nextScreen/:someValue',
+          page: () => NextScreen(),
+          // To control the transition route wise
+          // If specified will override the default transition
+          transition: Transition.leftToRight,
+        ),
+      ],
+      // unknownRoute: GetPage(name: '/notfound', page: () => UnknownRoute()),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -24,30 +50,38 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ElevatedButton(
                 onPressed: () {
-                  Get.to(SnackbarPage());
+                  Get.to(() => SnackbarPage());
                 },
                 child: Text('Snackbar'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Get.to(DialogPage());
+                  Get.to(() => DialogPage());
                 },
                 child: Text('Dialog'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Get.to(BottomSheetPage());
+                  Get.to(() => BottomSheetPage());
                 },
                 child: Text('Bottom Sheet'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Get.to(UnNamedRoutePage());
+                  Get.to(() => UnNamedRoutePage());
                 },
                 child: Text('Go to UnNamed Route'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  // Get.to(() => NamedRoutePage());
+                  Get.to(() => NamedRoutePage());
+                },
+                child: Text('Go to Named Route'),
               ),
             ],
           ),

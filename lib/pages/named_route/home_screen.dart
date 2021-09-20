@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx/main.dart';
-import 'package:flutter_getx/pages/un_named_route/next_page.dart';
+import 'package:flutter_getx/pages/named_route/next_screen.dart';
 import 'package:get/get.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('HomeScreen'),
       ),
       body: Center(
         child: Column(
@@ -18,7 +17,7 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              "This is Home",
+              "This is Home Screen",
               style: TextStyle(
                 color: Colors.purpleAccent,
                 fontSize: 24,
@@ -27,33 +26,36 @@ class Home extends StatelessWidget {
             SizedBox(height: 8),
             ElevatedButton(
               child: Text(
-                "Next Page",
+                "Next Screen",
                 style: TextStyle(fontSize: 18),
               ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.lightBlue,
+                onSurface: Colors.white,
+              ),
               onPressed: () {
-                Get.to(NextPage());
+                // Get.toNamed('/nextScreen');
+                Get.toNamed('/nextScreen/1234');
               },
             ),
             SizedBox(height: 8),
             ElevatedButton(
               child: Text(
-                "Back to UnNamedRoutePage",
+                "Back to NamedRoutePage",
                 style: TextStyle(fontSize: 18),
               ),
               onPressed: () {
-                // Get.back();
-                // // Send data to previous screen must use result as name
-                Get.back(result: 'This is from Home Screen');
+                Get.back();
               },
             ),
             SizedBox(height: 8),
-            // Text(
-            //   "${Get.arguments}",
-            //   style: TextStyle(
-            //     color: Colors.green,
-            //     fontSize: 20,
-            //   ),
-            // ),
+            Text(
+              "Channel name is ${Get.parameters['channel']} and content is ${Get.parameters['content']}",
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 30,
+              ),
+            ),
           ],
         ),
       ),

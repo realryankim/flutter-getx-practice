@@ -1,5 +1,3 @@
-// #3 || Flutter GetX Tutorial || Show Dialog with GetX Library
-// https://www.youtube.com/watch?v=5Vi3SBlZoAk&list=PLCaS22Sjc8YR32XmudgmVqs49t-eKKr9t&index=3
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

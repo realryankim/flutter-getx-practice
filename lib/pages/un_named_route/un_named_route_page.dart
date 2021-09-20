@@ -1,6 +1,3 @@
-// #5 || Flutter GetX Tutorial || Route Navigation for Un-named Routes using GetX Library
-// https://www.youtube.com/watch?v=7_Ze16_tMBE&list=PLCaS22Sjc8YR32XmudgmVqs49t-eKKr9t&index=5
-
 import 'package:flutter/material.dart';
 import 'package:flutter_getx/pages/un_named_route/home.dart';
 import 'package:get/get.dart';
