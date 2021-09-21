@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx/pages/bottom_sheet_page.dart';
 import 'package:flutter_getx/pages/dialog_page.dart';
 import 'package:flutter_getx/pages/getx_controller_lifycycle/getx_controller_lifycycle.dart';
+import 'package:flutter_getx/pages/getx_unique_id/getx_unique_id.dart';
 import 'package:flutter_getx/pages/named_route/home_screen.dart';
 import 'package:flutter_getx/pages/named_route/named_route_page.dart';
 import 'package:flutter_getx/pages/named_route/next_screen.dart';
@@ -103,6 +104,12 @@ class MyApp extends StatelessWidget {
                   Get.to(() => GetxControllerLifeCycle());
                 },
                 child: Text('Go to Getx Controller LifeCycle'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Get.to(() => GetxUniqueId());
+                },
+                child: Text('Go to Getx Unique Id'),
               ),
             ],
           ),
