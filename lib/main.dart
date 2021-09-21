@@ -6,6 +6,7 @@ import 'package:flutter_getx/pages/named_route/named_route_page.dart';
 import 'package:flutter_getx/pages/named_route/next_screen.dart';
 import 'package:flutter_getx/pages/named_route/unknown_route.dart';
 import 'package:flutter_getx/pages/reactive_state_management/reactive_state_management.dart';
+import 'package:flutter_getx/pages/simple_state_management/simple_state_management.dart';
 import 'package:flutter_getx/pages/snackbar_page.dart';
 import 'package:flutter_getx/pages/un_named_route/un_named_route_page.dart';
 import 'package:get/get.dart';
@@ -89,6 +90,12 @@ class MyApp extends StatelessWidget {
                   Get.to(() => ReactiveStateManagement());
                 },
                 child: Text('Go to Reactive State Management'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Get.to(() => SimpleStateManagement());
+                },
+                child: Text('Go to Simple State Management'),
               ),
             ],
           ),
