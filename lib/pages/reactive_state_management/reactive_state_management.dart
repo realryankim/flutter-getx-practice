@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx/pages/reactive_state_management/getx_controller_page.dart';
 import 'package:flutter_getx/pages/reactive_state_management/student.dart';
 import 'package:get/get.dart';
 
@@ -102,6 +103,15 @@ class ReactiveStateManagement extends StatelessWidget {
                 student.update((student) {
                   student!.name = student.name.toString().toUpperCase();
                 });
+              },
+            ),
+            SizedBox(height: 16),
+            Divider(color: Colors.black.withOpacity(0.5)),
+            ElevatedButton(
+              child: Text('Go to GetXController Page'),
+              style: ElevatedButton.styleFrom(primary: Colors.green),
+              onPressed: () {
+                Get.to(() => GetxControllerPage());
               },
             ),
           ],
