@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx/pages/bottom_sheet_page.dart';
 import 'package:flutter_getx/pages/dialog_page.dart';
 import 'package:flutter_getx/pages/getx_controller_lifycycle/getx_controller_lifycycle.dart';
+import 'package:flutter_getx/pages/getx_dependency_injection/getx_dependency_injection.dart';
 import 'package:flutter_getx/pages/getx_internationaliztion/getx_internationalization.dart';
 import 'package:flutter_getx/pages/getx_internationaliztion/messages.dart';
 import 'package:flutter_getx/pages/getx_unique_id/getx_unique_id.dart';
@@ -132,6 +133,12 @@ class MyApp extends StatelessWidget {
                   Get.to(() => GetxInternationalization());
                 },
                 child: Text('Go to Getx Internationalization'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Get.to(() => GetxDependencyInjection());
+                },
+                child: Text('Go to Getx Dependency Injection'),
               ),
             ],
           ),
