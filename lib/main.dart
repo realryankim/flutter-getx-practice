@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx/pages/bottom_sheet_page.dart';
 import 'package:flutter_getx/pages/dialog_page.dart';
 import 'package:flutter_getx/pages/getx_controller_lifycycle/getx_controller_lifycycle.dart';
+import 'package:flutter_getx/pages/getx_internationaliztion/getx_internationalization.dart';
+import 'package:flutter_getx/pages/getx_internationaliztion/messages.dart';
 import 'package:flutter_getx/pages/getx_unique_id/getx_unique_id.dart';
 import 'package:flutter_getx/pages/getx_workers/getx_workers.dart';
 import 'package:flutter_getx/pages/named_route/home_screen.dart';
@@ -22,6 +24,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      // Getx Internationalization
+      translations: Messages(), // your translations
+      locale: Locale(
+          'en', 'US'), // default locale / to get device locale Get.deviceLocale
+      fallbackLocale:
+          Locale('en', 'US'), // fallback locale if wrong locale found
+      //
       title: 'Flutter GetX Practice',
       initialRoute: "/",
       defaultTransition: Transition.zoom,
@@ -117,6 +126,12 @@ class MyApp extends StatelessWidget {
                   Get.to(() => GetxWorkers());
                 },
                 child: Text('Go to Getx Workers'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Get.to(() => GetxInternationalization());
+                },
+                child: Text('Go to Getx Internationalization'),
               ),
             ],
           ),
