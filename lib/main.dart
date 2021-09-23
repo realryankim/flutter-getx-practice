@@ -5,6 +5,8 @@ import 'package:flutter_getx/pages/getx_controller_lifycycle/getx_controller_lif
 import 'package:flutter_getx/pages/getx_dependency_injection/getx_dependency_injection.dart';
 import 'package:flutter_getx/pages/getx_internationaliztion/getx_internationalization.dart';
 import 'package:flutter_getx/pages/getx_internationaliztion/messages.dart';
+import 'package:flutter_getx/pages/getx_service/getx_service.dart';
+import 'package:flutter_getx/pages/getx_service/service.dart';
 import 'package:flutter_getx/pages/getx_unique_id/getx_unique_id.dart';
 import 'package:flutter_getx/pages/getx_workers/getx_workers.dart';
 import 'package:flutter_getx/pages/named_route/home_screen.dart';
@@ -17,8 +19,16 @@ import 'package:flutter_getx/pages/snackbar_page.dart';
 import 'package:flutter_getx/pages/un_named_route/un_named_route_page.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  // Getx Service
+  await initServices();
   runApp(MyApp());
+}
+
+Future<void> initServices() async {
+  print('starting services ...');
+  await Get.putAsync<Service>(() async => await Service());
+  print('All services started...');
 }
 
 class MyApp extends StatelessWidget {
@@ -139,6 +149,12 @@ class MyApp extends StatelessWidget {
                   Get.to(() => GetxDependencyInjection());
                 },
                 child: Text('Go to Getx Dependency Injection'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Get.to(() => GetxServicePage());
+                },
+                child: Text('Go to Getx Service Page'),
               ),
             ],
           ),
