@@ -8,6 +8,8 @@ import 'package:flutter_getx/pages/getx_binding/home_controller_binding.dart';
 import 'package:flutter_getx/pages/getx_binding/my_app_controller_binding.dart';
 import 'package:flutter_getx/pages/getx_controller_lifycycle/getx_controller_lifycycle.dart';
 import 'package:flutter_getx/pages/getx_dependency_injection/getx_dependency_injection.dart';
+import 'package:flutter_getx/pages/getx_fetch_display_api_data/common_module/app_color.dart';
+import 'package:flutter_getx/pages/getx_fetch_display_api_data/getx_fetch_display_api_data.dart';
 import 'package:flutter_getx/pages/getx_internationaliztion/getx_internationalization.dart';
 import 'package:flutter_getx/pages/getx_internationaliztion/messages.dart';
 import 'package:flutter_getx/pages/getx_service/getx_service.dart';
@@ -33,6 +35,7 @@ void main() async {
   runApp(MyApp());
 }
 
+// Getx Service
 // When should you use getx service? if you want that some functionalities
 // should be available till the app is alive
 Future<void> initServices() async {
@@ -55,7 +58,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter GetX Practice',
       initialRoute: "/",
       defaultTransition: Transition.zoom,
-
+      //
       // ### Getx Binding
       // initialBinding: AllControllerBinding(),
 
@@ -122,8 +125,10 @@ class MyApp extends StatelessWidget {
       // unknownRoute: GetPage(name: '/notfound', page: () => UnknownRoute()),
 
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        // primarySwatch: Colors.blue,
+        primarySwatch: AppColor.purpleColor,
       ),
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text('Flutter GetX Practice'),
@@ -217,6 +222,12 @@ class MyApp extends StatelessWidget {
                     Get.to(() => GetxBindingPage());
                   },
                   child: Text('Go to Getx Binding Page'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Get.to(() => GetxFetchDisplayApiData());
+                  },
+                  child: Text('Go to Getx Fetch Display Api Data Page'),
                 ),
               ],
             ),
