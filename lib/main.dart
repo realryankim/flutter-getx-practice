@@ -10,6 +10,7 @@ import 'package:flutter_getx/pages/getx_controller_lifycycle/getx_controller_lif
 import 'package:flutter_getx/pages/getx_dependency_injection/getx_dependency_injection.dart';
 import 'package:flutter_getx/pages/getx_fetch_display_api_data/common_module/app_color.dart';
 import 'package:flutter_getx/pages/getx_fetch_display_api_data/getx_fetch_display_api_data.dart';
+import 'package:flutter_getx/pages/getx_get_view_get_widget/getx_get_view_get_widget.dart';
 import 'package:flutter_getx/pages/getx_internationaliztion/getx_internationalization.dart';
 import 'package:flutter_getx/pages/getx_internationaliztion/messages.dart';
 import 'package:flutter_getx/pages/getx_service/getx_service.dart';
@@ -239,6 +240,12 @@ class MyApp extends StatelessWidget {
                     Get.to(() => GetxGetStorageEmailValidation());
                   },
                   child: Text('Go to Getx GetStorage Email Validation'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Get.to(() => GetxGetViewGetWidget());
+                  },
+                  child: Text('Go to Getx GetView GetWidget'),
                 ),
               ],
             ),
