@@ -14,6 +14,7 @@ import 'package:flutter_getx/pages/getx_internationaliztion/getx_internationaliz
 import 'package:flutter_getx/pages/getx_internationaliztion/messages.dart';
 import 'package:flutter_getx/pages/getx_service/getx_service.dart';
 import 'package:flutter_getx/pages/getx_service/service.dart';
+import 'package:flutter_getx/pages/getx_storage_email_validation/getx_get_storage_email_validation.dart';
 import 'package:flutter_getx/pages/getx_unique_id/getx_unique_id.dart';
 import 'package:flutter_getx/pages/getx_workers/getx_workers.dart';
 import 'package:flutter_getx/pages/named_route/home_screen.dart';
@@ -25,6 +26,7 @@ import 'package:flutter_getx/pages/simple_state_management/simple_state_manageme
 import 'package:flutter_getx/pages/snackbar_page.dart';
 import 'package:flutter_getx/pages/un_named_route/un_named_route_page.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 void main() async {
   // Getx Service
@@ -32,6 +34,9 @@ void main() async {
 
   // ### Getx Binding
   MyAppControllerBinding().dependencies();
+
+  // GetStorage
+  await GetStorage.init(); // Initialize storage driver
   runApp(MyApp());
 }
 
@@ -228,6 +233,12 @@ class MyApp extends StatelessWidget {
                     Get.to(() => GetxFetchDisplayApiData());
                   },
                   child: Text('Go to Getx Fetch Display Api Data Page'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Get.to(() => GetxGetStorageEmailValidation());
+                  },
+                  child: Text('Go to Getx GetStorage Email Validation'),
                 ),
               ],
             ),
